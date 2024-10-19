@@ -1,0 +1,61 @@
+/* File: styles/components/atoms/SpeechTest.module.css */
+
+.speechTest {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toggleButton {
+  padding: 0px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Green background for Start Listening */
+.startButton {
+  background-color: rgba(0, 235, 40, 0.25);
+  color: white;
+}
+
+/* Red background for Stop Listening */
+.stopButton {
+  background-color: rgba(235, 0, 40, 0.25);
+  color: white;
+}
+
+.textarea {
+  resize: none;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  white-space: nowrap; /* Ensure text stays on one line */
+  padding: 0px;
+  font-size: 14px;
+  border: 0px solid #ccc;
+  border-radius: 0px;
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.textarea::-webkit-scrollbar {
+  height: 5px; /* Make the scrollbar smaller */
+}
+
+.textarea::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+.textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.dark {
+  background-color: rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.light {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: black;
+}

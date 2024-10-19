@@ -1,0 +1,5 @@
+/* styles/AudioStream.module.css */
+
+.audio {
+  display: none; /* Hide the audio element */
+}

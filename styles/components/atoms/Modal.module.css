@@ -1,0 +1,82 @@
+/* File: styles/components/atoms/Modal.module.css */
+
+.modalOverlay {
+  position: absolute; /* Change from fixed to absolute so it's relative to the chat panel */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width within the chat panel */
+  height: 100%; /* Full height within the chat panel */
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background with higher opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999 !important; /* Ensure modal is on top of other elements in the chat panel */
+  overflow: hidden; /* Prevent any overflow issues */
+}
+
+.modalContent {
+  background-color: #1e1e1e; /* Dark gray background */
+  color: #e0e0e0; /* Light gray text */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  z-index: 10000 !important; /* Ensure modal content is above other chat elements */
+  position: relative; /* Required to honor the z-index */
+}
+
+.modalTitle {
+  margin-top: 0;
+  color: #ffffff; /* White title */
+}
+
+.modalMessage {
+  margin: 15px 0;
+  color: #c0c0c0; /* Slightly lighter gray for message */
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Add a gap between the buttons */
+}
+
+.cancelButton, .confirmButton {
+  background-color: #555; /* Dark gray for buttons */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1; /* Make buttons take equal space */
+}
+
+.cancelButton:hover {
+  background-color: #777; /* Lighter gray on hover */
+}
+
+.confirmButton {
+  background-color: #d32f2f; /* Red for the confirm (erase) button */
+}
+
+.confirmButton:hover {
+  background-color: #b71c1c; /* Darker red on hover */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+  .buttons {
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    width: 100%; /* Ensure buttons take full width within modal */
+  }
+
+  .cancelButton, .confirmButton {
+    width: 100%; /* Make buttons full width on mobile */
+    margin: 5px 0; /* Add space between the buttons */
+    font-size: 12px; /* Reduce font size for smaller buttons */
+    padding: 8px 15px; /* Adjust padding to fit smaller buttons */
+  }
+}

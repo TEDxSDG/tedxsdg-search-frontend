@@ -1,0 +1,147 @@
+/* File: styles/components/organisms/ChatPanel.module.css */
+
+/* Base Styles */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Center horizontally if needed */
+  align-items: flex-end; /* Align items to the bottom of the container */
+  overflow: hidden;
+  z-index: 0; /* Base container layer */
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Adjusted for resizing */
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Video Stream Styles */
+.videoStream,
+.videoStreamHidden {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.videoStreamHidden {
+  display: none !important; /* Completely remove hidden video stream */
+}
+
+/* Empty Placeholder */
+.emptyPlaceholder {
+  display: none; /* Hide completely */
+  width: 100vw;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Stacked Layout Styles */
+.toolsLayer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: calc(100% - 40px);
+  max-width: 600px;
+  z-index: 101; /* Ensure it's above chatLayer */
+  display: flex;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chatLayer {
+  position: relative;
+  top: 0px;
+  right: 0;
+  width: 80%;
+  z-index: 100; /* Ensure it's below toolsLayer */
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 2px;
+  overflow-y: auto;
+}
+
+/* Full-Screen Mode Styles */
+.fullScreenMode {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000; /* Cover everything */
+  background-color: rgba(0, 0, 0, 0.9); /* Darker background for full-screen */
+}
+
+.fullScreenChat {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  max-height: none; /* Remove height constraints */
+}
+
+/* Minimized Tools Layer */
+.minimized {
+  width: 0;
+  height: 0;
+  visibility: hidden; /* Hide completely */
+  overflow: hidden;
+}
+
+/* Responsive Styles */
+
+/* Desktop and Large Screens */
+@media (min-width: 1024px) {
+}
+
+/* Tablets and Mobile Devices */
+@media (max-width: 1023px) {
+  .chatLayer {
+    width: 100%;
+    top: 0px;
+    max-width: none;
+    z-index: 100; /* Ensure it's below toolsLayer */
+  }
+
+  .toolsLayer {
+    width: 100%;
+    max-width: none;
+    z-index: 101; /* Ensure it's above chatLayer */
+  }
+
+  .fullScreenMode {
+    width: 50vw;
+    height: 50vh;
+  }
+
+  .fullScreenChat {
+    width: 50vw;
+    height: 50vh;
+    padding: 0;
+    max-height: none;
+  }
+}

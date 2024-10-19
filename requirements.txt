@@ -1,0 +1,6 @@
+colorlog
+fastapi
+httpx
+uvicorn
+numpy
+rapidfuzz

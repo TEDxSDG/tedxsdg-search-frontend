@@ -1,0 +1,40 @@
+/* File: styles/components/organisms/ControlButtons.module.css */
+
+.control-buttons-container {
+  position: absolute;
+  bottom: 0;            /* Align to the bottom of the container */
+  right: 0;             /* Align to the right of the container */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.startButton {
+  background-color: rgba(0, 235, 40, 0.25);
+  color: white;
+}
+
+.stopButton {
+  background-color: rgba(235, 0, 40, 0.25);
+  color: white;
+}
+
+.eraseButton {
+  background-color: rgba(235, 0, 40, 0.25);
+  color: black;
+}
+
+.button:disabled {
+  background-color: rgba(0, 0, 0, 0.0);
+  cursor: not-allowed;
+}

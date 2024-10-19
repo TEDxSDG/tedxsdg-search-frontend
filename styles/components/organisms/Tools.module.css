@@ -1,0 +1,140 @@
+/* File: styles/components/organisms/Tools.module.css */
+
+.tools-container {
+  padding: 0px 30px;
+  position: absolute;       /* Use absolute positioning */
+  bottom: -680px;           /* Greater negative numbers move container further down */
+  right: -48px;             /* Align container slightly to the left for aesthetics */
+  display: flex;
+  flex-direction: column;   /* Arrange buttons vertically */
+  align-items: flex-end;    /* Align buttons to the right */
+  cursor: move; /* Indicates draggable area */
+}
+
+.button-group {
+  display: flex;            /* Use flex-start to align buttons to the left */
+  flex-direction: column;   /* Keep buttons arranged vertically */
+  align-items: flex-start;  /* Align buttons to the left */
+}
+
+/* Button styles */
+.right-edge-button {
+  padding: 0px 0spx;         /* Adjust padding for better spacing */
+  margin-bottom: 6px;       /* Add spacing between buttons */
+  background-color: rgb(0, 112, 243, 1); /* Default background color */
+  color: white;             /* Text color */
+  border: none;             /* Remove border */
+  border-radius: 3px;       /* Small rounded corners */
+  cursor: pointer;          /* Change cursor to pointer */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Light shadow */
+  font-size: 13px;          /* Much smaller font size */
+  width: 60px;              /* Fixed width for tiny buttons */
+  text-align: center;       /* Center text inside the button */
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Add smooth transition */
+}
+
+.right-edge-button:hover {
+  background-color: rgb(0, 141, 255, 1); /* Brighten on hover */
+  transform: translateX(5px); /* Shift button slightly to the right on hover */
+}
+
+.right-edge-button:active {
+  background-color: rgb(0, 170, 255, 1); /* Even brighter on click */
+}
+
+/* External Link Button */
+.external-link-button {
+  background-color: #0288d1;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.external-link-button:hover {
+  background-color: #03a9f4;
+  transform: translateX(5px);
+}
+
+.external-link-button:active {
+  background-color: #4fc3f7;
+}
+
+/* Close Button */
+.close-button-active {
+  background-color: #d32f2f;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.close-button-active:hover {
+  background-color: #e57373;
+  transform: translateX(5px);
+}
+
+.close-button-active:active {
+  background-color: #ef9a9a;
+}
+
+/* Responsive styles for various device sizes */
+@media (max-width: 1023px) {
+  .tools-container {
+    position: relative;
+    bottom: -100px;
+    right: -2vw;
+  }
+
+  .button-group {
+    padding: 10px 0;
+    position: relative;
+    bottom: 120px;
+    right: -14px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .right-edge-button {
+    margin-left: 0;
+    font-size: 9px;
+    width: 30px;
+  }
+
+  .right-edge-button:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.lazy-arrow-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.flashing-arrow {
+  position: absolute;
+  left: -32px; /* Positioning the arrow to the left of the button */
+  top: 40%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #eb0028;
+  clip-path: polygon(100% 50%, 0% 0%, 30% 50%, 0% 100%);
+  animation: flash 0.5s infinite; /* Speed of flash animation */
+  transition: top 0.8s ease-in-out, left 0.8s ease-in-out; /* Smooth arrow movement */
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}

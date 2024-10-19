@@ -1,0 +1,78 @@
+/* File: src/styles/components/molecules/ChatMessages.module.css */
+
+/* Container for all messages */
+.messagesContainer {
+  height: 90vh; /* Set container height to occupy most of the viewport */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border-radius: 5px;
+  scroll-behavior: smooth; /* Smooth scrolling */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Ensure messages start at the top */
+  opacity: 1; /* Ensure visibility on initial render */
+  visibility: visible; /* Avoid hidden or collapsed state */
+  transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out; /* Smooth transitions */
+  z-index: 500; /* Ensure the messagesContainer is above the chatLayer */
+}
+
+/* Scrollbar styles for better UI visibility */
+.messagesContainer::-webkit-scrollbar {
+  width: 8px; /* Chrome, Safari */
+}
+
+.messagesContainer::-webkit-scrollbar-thumb {
+  background-color: #555; /* Dark gray scrollbar color */
+  border-radius: 5px;
+}
+
+.messagesContainer::-webkit-scrollbar-track {
+  background-color: transparent; /* Track color */
+}
+
+/* --- New: Info Mode Styles --- */
+.infoMode .messagesContainer {
+  height: 100vh; /* Full screen height */
+  padding: 20px; /* Optional: Add padding for better spacing */
+}
+
+/* Tablets and Mobile Devices */
+@media (max-width: 1023px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Ensure the messages container stays pinned to the bottom */
+  }
+
+  .messagesContainer {
+    height: 40vh; /* Set container height to 40% of the viewport */
+    max-height: 100vh; /* Ensure it doesn't go beyond the viewport height */
+    width: 100%; /* Ensure it stretches across the width of the container */
+    flex-grow: 1; /* Allow the container to grow and fill available space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border-radius: 5px;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ensure messages start at the top within this container */
+    align-items: stretch; /* Ensure the messages take up full width */
+    opacity: 1; /* Ensure visibility on initial render */
+    visibility: visible; /* Avoid hidden or collapsed state */
+    transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out; /* Smooth transitions */
+    z-index: 500; /* Ensure the messagesContainer is above the chatLayer */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Ensure no padding is affecting layout */
+  }
+}
+
+
+@media (min-height: 845px) {
+  .messagesContainer {
+    height: 60vh;
+  }
+}
+
+@media (min-height: 896px) and (max-height: 931px) {
+  .messagesContainer {
+    height: 60vh;
+  }
+}

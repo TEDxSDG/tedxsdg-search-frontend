@@ -1,0 +1,78 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column; /* Stack chat input and button rows */
+  gap: 8px; /* Adjust the gap between the chat input and button row */
+  width: 100%; /* Ensure full width of the container */
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input {
+  flex-grow: 1; /* Allow textarea to take the full width */
+  padding: 8px 12px;
+  color: white;
+  font-size: 16px;
+  background-color: #005C4B;
+  border: 0px solid #ccc;
+  border-radius: 0px;
+  resize: none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  height: auto;
+  min-height: 30px;
+}
+
+/* Add styles for the placeholder */
+.input::placeholder {
+  color: white; /* Change the placeholder color to white */
+  font-weight: bold; /* Make the placeholder bold */
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: space-between; /* Space between the send button and control buttons */
+  align-items: flex-start; /* Align send button to the top of the container */
+  width: 100%; /* Ensure full width of the container */
+}
+
+.sendButton {
+  align-self: flex-start; /* Ensure send button stays at the top */
+  padding: 8px 12px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sendButton:hover {
+  background-color: #2196f3;
+}
+
+.sendButton:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+/* Control buttons always aligned to the right */
+.controlRow {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Adjust the gap between the control buttons */
+}
+
+/* Mobile view styles */
+@media (max-width: 768px) {
+  .inputContainer {
+    gap: 8px;
+  }
+
+  .buttonRow {
+    justify-content: space-between; /* Maintain left-right alignment on mobile */
+  }
+}

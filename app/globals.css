@@ -1,0 +1,118 @@
+/* File: app/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* Global styles for body */
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  transition: none !important; /* Disable any default body transitions */
+  overflow: hidden; /* Prevent body scrolling */
+  position: relative; /* Ensure correct stacking order */
+  z-index: 1; /* Lower z-index to ensure modals and other components can stack above */
+}
+
+/* Animation for spinning elements */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Container grid layout */
+.container {
+  display: grid;
+  padding: 0px;
+  transition: none !important; /* Disable transitions for the container */
+  overflow: auto; /* Allow scrolling inside the container */
+  position: relative; /* Ensure container respects modal positioning */
+  z-index: 1; /* Ensure it stays below the modal overlay */
+  /* Width and height will be set dynamically by JS */
+}
+
+/* Desktop and large screens */
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1fr; /* Split the container into two columns */
+    grid-template-rows: auto; /* Allow height to adjust automatically */
+  }
+}
+
+/* Tablets */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    grid-template-rows: auto; /* Allow height to adjust automatically */
+    grid-template-columns: 1fr 1fr; /* Split the container into two columns */
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: 1fr 1fr; /* Split the container into two columns */
+    grid-template-rows: auto; /* Allow height to adjust automatically */
+  }
+}
+
+/* Small wearable devices */
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr 1fr; /* Split the container into two columns */
+    grid-template-rows: auto; /* Allow height to adjust automatically */
+  }
+}
+
+/* Scrollbar styles */
+body::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #888; /* Darker thumb color */
+  border-radius: 10px; /* Rounded edges */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #e0e0e0; /* Lighter track color */
+}
+
+/* Button styles */
+.button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Error text styling */
+.error {
+  color: red;
+  font-weight: bold;
+}
